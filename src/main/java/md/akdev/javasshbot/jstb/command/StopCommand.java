@@ -13,7 +13,7 @@ public class StopCommand implements Command{
     }
 
     @Override
-    public void Execute(Update update) {
+    public void execute(Update update) {
         sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), STOP_MESSAGE);
     }
 }

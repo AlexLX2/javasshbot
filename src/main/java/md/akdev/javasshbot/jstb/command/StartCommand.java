@@ -20,7 +20,7 @@ public class StartCommand implements Command{
     }
 
     @Override
-    public void Execute(Update update) {
+    public void execute(Update update) {
         Long chatId = getChatId(update);
         String userName = getUserName(update);
 

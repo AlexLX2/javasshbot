@@ -3,9 +3,8 @@ package md.akdev.javasshbot.jstb.command;
 public enum CommandName {
     START("/start"),
     STOP("/stop"),
-
     HELP("/help"),
-
+    ASSETS("/assets"),
     NO("");
 
     private final String commandName;

@@ -1,6 +1,9 @@
 package md.akdev.javasshbot.jstb.bot;
 
 import md.akdev.javasshbot.jstb.command.CommandContainer;
+import md.akdev.javasshbot.jstb.command.InlineCommand;
+import md.akdev.javasshbot.jstb.service.AssetService;
+import md.akdev.javasshbot.jstb.service.SendBotMessageService;
 import md.akdev.javasshbot.jstb.service.SendBotMessageServiceImpl;
 import md.akdev.javasshbot.jstb.service.TelegramUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +22,8 @@ public class JavaSshBot extends TelegramLongPollingBot {
     private final CommandContainer commandContainer;
 
     @Autowired
-    public JavaSshBot(TelegramUserService telegramUserService) {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
+    public JavaSshBot(TelegramUserService telegramUserService, AssetService assetService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService, assetService);
     }
 
     @Value("${bot.username}")
@@ -43,13 +46,18 @@ public class JavaSshBot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String message = update.getMessage().getText().trim();
+            System.out.println("!!!!!!!!!!!!!!!!!!" + message);
             if (message.startsWith(COMMAND_PREFIX)) {
                 String commandIdentifier = message.split(" ")[0].toLowerCase();
 
-                commandContainer.retrieveCommand(commandIdentifier).Execute(update);
+                commandContainer.retrieveCommand(commandIdentifier).execute(update);
             } else {
-                commandContainer.retrieveCommand(NO.getCommandName()).Execute(update);
+                commandContainer.retrieveCommand(NO.getCommandName()).execute(update);
             }
+        }
+        else if (update.hasCallbackQuery()){
+            InlineCommand inlineCommand = new InlineCommand(new SendBotMessageServiceImpl(this));
+            inlineCommand.execute(update);
         }
     }
 }
