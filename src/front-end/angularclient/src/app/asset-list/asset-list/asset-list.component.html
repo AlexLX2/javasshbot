@@ -1,0 +1,20 @@
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">IP</th>
+        <th scope="col">Login</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let asset of assets">
+        <td>{{ asset.ip }}</td>
+        <td>{{ asset.name }}</td>
+        <td>{{ asset.login }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

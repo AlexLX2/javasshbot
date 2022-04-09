@@ -19,6 +19,7 @@ public class CommandContainer {
                 .put(HELP.getCommandName(), new HelpCommand(sendBotMessageService))
                 .put(NO.getCommandName(), new NoCommand(sendBotMessageService))
                 .put(ASSETS.getCommandName(), new AssetCommand(sendBotMessageService, assetService))
+                .put("ASSET_BTN", new InlineCommand(sendBotMessageService, telegramUserService, assetService))
                 .build();
 
         unknownCommand = new UnknownCommand(sendBotMessageService);

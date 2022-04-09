@@ -1,9 +1,7 @@
 package md.akdev.javasshbot.jstb.bot;
 
 import md.akdev.javasshbot.jstb.command.CommandContainer;
-import md.akdev.javasshbot.jstb.command.InlineCommand;
 import md.akdev.javasshbot.jstb.service.AssetService;
-import md.akdev.javasshbot.jstb.service.SendBotMessageService;
 import md.akdev.javasshbot.jstb.service.SendBotMessageServiceImpl;
 import md.akdev.javasshbot.jstb.service.TelegramUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +44,6 @@ public class JavaSshBot extends TelegramLongPollingBot {
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {
             String message = update.getMessage().getText().trim();
-            System.out.println("!!!!!!!!!!!!!!!!!!" + message);
             if (message.startsWith(COMMAND_PREFIX)) {
                 String commandIdentifier = message.split(" ")[0].toLowerCase();
 
@@ -56,8 +53,7 @@ public class JavaSshBot extends TelegramLongPollingBot {
             }
         }
         else if (update.hasCallbackQuery()){
-            InlineCommand inlineCommand = new InlineCommand(new SendBotMessageServiceImpl(this));
-            inlineCommand.execute(update);
+            commandContainer.retrieveCommand("ASSET_BTN").execute(update);
         }
     }
 }

@@ -32,7 +32,7 @@ public class AssetCommand implements Command {
              ) {
             List<InlineKeyboardButton> rowInline = new ArrayList<>();
             InlineKeyboardButton inlineKeyboardButton = new InlineKeyboardButton();
-            inlineKeyboardButton.setCallbackData(asset.getName());
+            inlineKeyboardButton.setCallbackData(String.valueOf(asset.getId()));
             inlineKeyboardButton.setText(asset.getName() + " " + asset.getIp());
             rowInline.add(inlineKeyboardButton);
             // Set the keyboard to the markup
