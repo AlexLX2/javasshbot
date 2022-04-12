@@ -1,8 +1,12 @@
 package md.akdev.javasshbot.jstb.controller;
 
 import md.akdev.javasshbot.jstb.repo.AssetRepo;
+import md.akdev.javasshbot.jstb.repo.AssetTypeRepository;
+import md.akdev.javasshbot.jstb.repo.PlaybookRepository;
 import md.akdev.javasshbot.jstb.repo.TelegramUserRepo;
 import md.akdev.javasshbot.jstb.repo.entity.Asset;
+import md.akdev.javasshbot.jstb.repo.entity.AssetType;
+import md.akdev.javasshbot.jstb.repo.entity.Playbook;
 import md.akdev.javasshbot.jstb.repo.entity.TelegramUser;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,11 +18,15 @@ public class MainController {
 
     private final AssetRepo assetRepo;
     private final TelegramUserRepo telegramUserRepo;
+    private final PlaybookRepository playbookRepository;
+    private final AssetTypeRepository assetTypeRepository;
 
 
-    public MainController(AssetRepo assetRepo, TelegramUserRepo telegramUserRepo) {
+    public MainController(AssetRepo assetRepo, TelegramUserRepo telegramUserRepo, PlaybookRepository playbookRepository, AssetTypeRepository assetTypeRepository) {
         this.assetRepo = assetRepo;
         this.telegramUserRepo = telegramUserRepo;
+        this.playbookRepository = playbookRepository;
+        this.assetTypeRepository = assetTypeRepository;
     }
 
     @GetMapping("/assets")
@@ -36,4 +44,16 @@ public class MainController {
 
     @PutMapping("/users")
     void updateUser(@RequestBody TelegramUser telegramUser) {telegramUserRepo.save(telegramUser);}
+
+    @GetMapping("/assettypes")
+    public List<AssetType> getAssetTypes() {return assetTypeRepository.findAll();}
+
+    @PostMapping("/assettypes")
+    void addAssetType(@RequestBody AssetType assetType) {assetTypeRepository.save(assetType);}
+
+    @GetMapping("/playbooks")
+    public List<Playbook> getPlaybooks() {return playbookRepository.findAll();}
+
+    @PostMapping("/playbooks")
+    void addPlaybook(@RequestBody Playbook playbook) {playbookRepository.save(playbook);}
 }

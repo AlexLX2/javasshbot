@@ -1,0 +1,22 @@
+<div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="onSubmit()" #playbookForm="ngForm">
+      <div class="form-group">
+        <label for="command">Command</label>
+        <input type="text" [(ngModel)]="playbook.command"
+               class="form-control"
+               id="command"
+               name="command">
+      </div>
+      <div class="form-group">
+        <label for="assetTypeId">Asset type ID</label>
+        <input type="text" [(ngModel)]="playbook.assetTypeId"
+               class="form-control"
+               id="assetTypeId"
+               name="assetTypeId">
+      </div>
+      <button type="submit" [disabled]="!playbookForm.form.valid"
+              class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
