@@ -2,6 +2,7 @@ package md.akdev.javasshbot.jstb.bot;
 
 import md.akdev.javasshbot.jstb.command.CommandContainer;
 import md.akdev.javasshbot.jstb.service.AssetService;
+import md.akdev.javasshbot.jstb.service.PlaybookService;
 import md.akdev.javasshbot.jstb.service.SendBotMessageServiceImpl;
 import md.akdev.javasshbot.jstb.service.TelegramUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,8 @@ public class JavaSshBot extends TelegramLongPollingBot {
     private final CommandContainer commandContainer;
 
     @Autowired
-    public JavaSshBot(TelegramUserService telegramUserService, AssetService assetService) {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService, assetService);
+    public JavaSshBot(TelegramUserService telegramUserService, AssetService assetService, PlaybookService playbookService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService, assetService, playbookService);
     }
 
     @Value("${bot.username}")
@@ -53,7 +54,15 @@ public class JavaSshBot extends TelegramLongPollingBot {
             }
         }
         else if (update.hasCallbackQuery()){
+            if(update.getCallbackQuery().getData().isBlank())
             commandContainer.retrieveCommand("ASSET_BTN").execute(update);
+            else if(update.getCallbackQuery().getData().startsWith("asset")){
+                commandContainer.retrieveCommand("COMMAND_BTN").execute(update);
+            }
+            else if(update.getCallbackQuery().getData().startsWith("command")){
+                commandContainer.retrieveCommand("PLAYBOOK").execute(update);
+            }
+            else {commandContainer.retrieveCommand(NO.getCommandName()).execute(update);}
         }
     }
 }

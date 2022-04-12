@@ -5,8 +5,9 @@ import com.jcraft.jsch.JSch;
 import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 import md.akdev.javasshbot.jstb.repo.entity.Asset;
-import md.akdev.javasshbot.jstb.repo.entity.TelegramUser;
+import md.akdev.javasshbot.jstb.repo.entity.Playbook;
 import md.akdev.javasshbot.jstb.service.AssetService;
+import md.akdev.javasshbot.jstb.service.PlaybookService;
 import md.akdev.javasshbot.jstb.service.SendBotMessageService;
 import md.akdev.javasshbot.jstb.service.TelegramUserService;
 import org.telegram.telegrambots.meta.api.objects.Update;
@@ -14,42 +15,40 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.Optional;
 
-public class InlineCommand implements Command{
+public class PlaybookCommand implements Command {
     private final SendBotMessageService sendBotMessageService;
     private final TelegramUserService telegramUserService;
     private final AssetService assetService;
+    private final PlaybookService playbookService;
 
-
-    public InlineCommand(SendBotMessageService sendBotMessageService, TelegramUserService telegramUserService, AssetService assetService) {
+    public PlaybookCommand(SendBotMessageService sendBotMessageService, TelegramUserService telegramUserService, AssetService assetService, PlaybookService playbookService) {
         this.sendBotMessageService = sendBotMessageService;
         this.telegramUserService = telegramUserService;
         this.assetService = assetService;
+        this.playbookService = playbookService;
     }
-
 
 
     @Override
     public void execute(Update update) {
         String call_data = update.getCallbackQuery().getData();
-        long message_id = update.getCallbackQuery().getMessage().getMessageId();
+
+        Long asset_id = Long.valueOf(call_data.split(" ")[1]);
+
+        int playbook_id = Integer.parseInt(call_data.split(" ")[2]);
+
         long chat_id = update.getCallbackQuery().getMessage().getChatId();
-        Optional<TelegramUser> telegramUser = telegramUserService.findByChatId(chat_id);
-        String answer = "";
-        if (telegramUser.isEmpty() || !telegramUser.get().isActive()) {
-             answer = "not autorized!";
-        }
-        else {
-            Asset asset = assetService.findById(Long.valueOf(call_data)).orElse(new Asset());
-            answer = testSSHFunc(asset);
 
-        }
+        Asset asset = assetService.findById(asset_id).orElse(new Asset());
+        Playbook playbook = playbookService.findById(playbook_id).orElse(new Playbook());
 
+        String answer = testSSHFunc(asset,playbook);
         sendBotMessageService.sendMessage(String.valueOf(chat_id), answer);
+
     }
 
-    private String testSSHFunc(Asset asset){
+    private String testSSHFunc(Asset asset, Playbook playbook){
         String answer = "Something wrong";
 
         Session session = null;
@@ -61,7 +60,7 @@ public class InlineCommand implements Command{
             session.connect();
 
             channel = (ChannelExec) session.openChannel("exec");
-            channel.setCommand("ls");
+            channel.setCommand(playbook.getCommand());
             ByteArrayOutputStream responseStream = new ByteArrayOutputStream();
 
             InputStream inputStream = channel.getInputStream();
@@ -81,18 +80,8 @@ public class InlineCommand implements Command{
                     System.out.println("exit-status: " + channel.getExitStatus());
                     break;
                 }
-                try{Thread.sleep(100);}catch (Exception e){}
 
             }
-          //  channel.setOutputStream(responseStream);
-
-
-            //System.out.println("0" + responseStream);
-//            while (session.isConnected()){
-//                Thread.sleep(600);
-//            }
-            //System.out.println("1" + responseStream);
-            //answer = responseStream.toString();
 
         } catch (JSchException | IOException e) {
             e.printStackTrace();

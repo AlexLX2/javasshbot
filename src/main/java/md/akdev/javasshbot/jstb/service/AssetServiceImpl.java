@@ -11,8 +11,7 @@ import java.util.Optional;
 @Service
 public class AssetServiceImpl implements AssetService{
 
-    @Autowired
-    private AssetRepo assetRepo;
+    private final AssetRepo assetRepo;
 
     public AssetServiceImpl(AssetRepo assetRepo){
         this.assetRepo = assetRepo;
