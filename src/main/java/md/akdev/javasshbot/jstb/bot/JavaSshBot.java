@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-import static md.akdev.javasshbot.jstb.command.CommandName.NO;
+import static md.akdev.javasshbot.jstb.command.CommandName.*;
 
 @Component
 public class JavaSshBot extends TelegramLongPollingBot {
@@ -55,12 +55,12 @@ public class JavaSshBot extends TelegramLongPollingBot {
         }
         else if (update.hasCallbackQuery()){
             if(update.getCallbackQuery().getData().isBlank())
-            commandContainer.retrieveCommand("ASSET_BTN").execute(update);
+            commandContainer.retrieveCommand(ASSET_LIST.getCommandName()).execute(update);
             else if(update.getCallbackQuery().getData().startsWith("asset")){
-                commandContainer.retrieveCommand("COMMAND_BTN").execute(update);
+                commandContainer.retrieveCommand(COMMAND_LIST.getCommandName()).execute(update);
             }
             else if(update.getCallbackQuery().getData().startsWith("command")){
-                commandContainer.retrieveCommand("PLAYBOOK").execute(update);
+                commandContainer.retrieveCommand(PLAYBOOK.getCommandName()).execute(update);
             }
             else {commandContainer.retrieveCommand(NO.getCommandName()).execute(update);}
         }

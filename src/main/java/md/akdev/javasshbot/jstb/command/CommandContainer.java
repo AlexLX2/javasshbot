@@ -20,9 +20,9 @@ public class CommandContainer {
                 .put(HELP.getCommandName(), new HelpCommand(sendBotMessageService))
                 .put(NO.getCommandName(), new NoCommand(sendBotMessageService))
                 .put(ASSETS.getCommandName(), new AssetCommand(sendBotMessageService, assetService))
-                .put("ASSET_BTN", new AssetListCommand(sendBotMessageService, telegramUserService, assetService, playbookService))
-                .put("COMMAND_BTN", new CommandListCommand(sendBotMessageService, telegramUserService, assetService, playbookService))
-                .put("PLAYBOOK", new PlaybookCommand(sendBotMessageService, telegramUserService, assetService, playbookService))
+                .put(ASSET_LIST.getCommandName(), new AssetListCommand(sendBotMessageService, telegramUserService, assetService, playbookService))
+                .put(COMMAND_LIST.getCommandName(), new CommandListCommand(sendBotMessageService, telegramUserService, assetService, playbookService))
+                .put(PLAYBOOK.getCommandName(), new PlaybookCommand(sendBotMessageService, telegramUserService, assetService, playbookService))
                 .build();
 
         unknownCommand = new UnknownCommand(sendBotMessageService);

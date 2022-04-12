@@ -18,13 +18,11 @@ import java.io.InputStream;
 
 public class PlaybookCommand implements Command {
     private final SendBotMessageService sendBotMessageService;
-    private final TelegramUserService telegramUserService;
     private final AssetService assetService;
     private final PlaybookService playbookService;
 
     public PlaybookCommand(SendBotMessageService sendBotMessageService, TelegramUserService telegramUserService, AssetService assetService, PlaybookService playbookService) {
         this.sendBotMessageService = sendBotMessageService;
-        this.telegramUserService = telegramUserService;
         this.assetService = assetService;
         this.playbookService = playbookService;
     }
