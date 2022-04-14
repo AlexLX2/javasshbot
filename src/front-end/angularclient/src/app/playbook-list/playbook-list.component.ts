@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Playbook} from "../../playbook";
-import {PlaybookService} from "../../service/playbook.service";
+import {Playbook} from "../playbook";
+import {PlaybookService} from "../_services/playbook.service";
 
 @Component({
   selector: 'app-playbook-list',

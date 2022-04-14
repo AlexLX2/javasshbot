@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Assettype} from "../../assettype";
-import {AssettypeService} from "../../service/assettype.service";
+import {Assettype} from "../assettype";
+import {AssettypeService} from "../_services/assettype.service";
 
 @Component({
   selector: 'app-assettype-list',

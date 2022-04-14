@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Asset} from "../asset";
 import {ActivatedRoute, Route, Router} from "@angular/router";
-import {AssetService} from "../service/asset.service";
+import {AssetService} from "../_services/asset.service";
 
 @Component({
   selector: 'app-asset-form',
