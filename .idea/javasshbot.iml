@@ -52,6 +52,14 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.3.18" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-jcl:5.3.18" level="project" />
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.29" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-security:2.6.6" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.18" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.18" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-config:5.6.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-core:5.6.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-crypto:5.6.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.security:spring-security-web:5.6.2" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.18" level="project" />
     <orderEntry type="library" name="Maven: org.telegram:telegrambots-spring-boot-starter:5.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.telegram:telegrambots:5.7.1" level="project" />
     <orderEntry type="library" name="Maven: org.telegram:telegrambots-meta:5.7.1" level="project" />
@@ -65,8 +73,6 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:2.13.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.jaxrs:jackson-jaxrs-base:2.13.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.module:jackson-module-jaxb-annotations:2.13.2" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.2" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.2.2" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.inject:jersey-hk2:2.35" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.core:jersey-common:2.35" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.hk2:osgi-resource-locator:1.0.3" level="project" />
@@ -122,9 +128,11 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.3.18" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.8.4" level="project" />
     <orderEntry type="library" name="Maven: org.projectlombok:lombok:1.18.22" level="project" />
+    <orderEntry type="library" name="Maven: io.jsonwebtoken:jjwt:0.9.1" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.2.2" level="project" />
+    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-jpa:2.6.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-aop:2.6.6" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-aop:5.3.18" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.9.7" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-jdbc:2.6.6" level="project" />
     <orderEntry type="library" name="Maven: com.zaxxer:HikariCP:4.0.3" level="project" />
@@ -145,7 +153,6 @@
     <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.6.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-orm:5.3.18" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.3.18" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-beans:5.3.18" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-aspects:5.3.18" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:2.6.6" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-json:2.6.6" level="project" />
@@ -158,7 +165,6 @@
     <orderEntry type="library" name="Maven: org.apache.tomcat.embed:tomcat-embed-websocket:9.0.60" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-web:5.3.18" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:5.3.18" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework:spring-expression:5.3.18" level="project" />
     <orderEntry type="library" name="Maven: org.postgresql:postgresql:42.3.3" level="project" />
     <orderEntry type="library" name="Maven: org.checkerframework:checker-qual:3.5.0" level="project" />
     <orderEntry type="library" name="Maven: com.jcraft:jsch:0.1.55" level="project" />

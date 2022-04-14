@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {Assettype} from "../../assettype";
+import {Assettype} from "../assettype";
 import {ActivatedRoute, Router} from "@angular/router";
-import {AssettypeService} from "../../service/assettype.service";
+import {AssettypeService} from "../_services/assettype.service";
 
 @Component({
   selector: 'app-assettype-form',

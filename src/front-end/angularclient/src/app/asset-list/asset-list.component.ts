@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Asset} from "../../asset";
-import {AssetService} from "../../service/asset.service";
+import {Asset} from "../asset";
+import {AssetService} from "../_services/asset.service";
 
 @Component({
   selector: 'app-asset-list',

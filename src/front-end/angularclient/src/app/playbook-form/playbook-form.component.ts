@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {Playbook} from "../../playbook";
-import {PlaybookService} from "../../service/playbook.service";
+import {Playbook} from "../playbook";
+import {PlaybookService} from "../_services/playbook.service";
 
 @Component({
   selector: 'app-playbook-form',
