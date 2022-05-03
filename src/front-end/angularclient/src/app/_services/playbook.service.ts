@@ -11,7 +11,7 @@ export class PlaybookService {
   private playbookUrl: string;
 
   constructor(private http: HttpClient) {
-    this.playbookUrl="http://localhost:8080/playbooks";
+    this.playbookUrl="http://172.30.30.13:8080/api/playbooks";
   }
 
   public findAll(): Observable<Playbook[]>{

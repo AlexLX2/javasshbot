@@ -11,7 +11,7 @@ export class AssetService {
   private assetUrl: string;
 
   constructor(private http: HttpClient) {
-    this.assetUrl = "http://localhost:8080/assets";
+    this.assetUrl = "http://172.30.30.13:8080/api/assets";
   }
 
   public findAll(): Observable<Asset[]> {

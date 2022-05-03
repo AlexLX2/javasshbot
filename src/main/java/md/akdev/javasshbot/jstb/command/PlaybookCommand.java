@@ -41,12 +41,12 @@ public class PlaybookCommand implements Command {
         Asset asset = assetService.findById(asset_id).orElse(new Asset());
         Playbook playbook = playbookService.findById(playbook_id).orElse(new Playbook());
 
-        String answer = testSSHFunc(asset,playbook);
+        String answer = execSSHPlaybook(asset,playbook);
         sendBotMessageService.sendMessage(String.valueOf(chat_id), answer);
 
     }
 
-    private String testSSHFunc(Asset asset, Playbook playbook){
+    private String execSSHPlaybook(Asset asset, Playbook playbook){
         String answer = "Something wrong";
 
         Session session = null;
@@ -59,7 +59,6 @@ public class PlaybookCommand implements Command {
 
             channel = (ChannelExec) session.openChannel("exec");
             channel.setCommand(playbook.getCommand());
-            ByteArrayOutputStream responseStream = new ByteArrayOutputStream();
 
             InputStream inputStream = channel.getInputStream();
 

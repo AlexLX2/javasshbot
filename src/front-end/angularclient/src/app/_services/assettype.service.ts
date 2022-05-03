@@ -10,7 +10,7 @@ export class AssettypeService {
   private assettypeUrl: string;
 
   constructor(private http: HttpClient) {
-    this.assettypeUrl="http://localhost:8080/assettypes";
+    this.assettypeUrl="http://172.30.30.13:8080/api/assettypes";
   }
 
   public findAll(): Observable<Assettype[]>{

@@ -15,7 +15,8 @@ import java.util.Base64;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
+@RequestMapping("/api")
 public class MainController {
 
     private final AssetRepo assetRepo;
