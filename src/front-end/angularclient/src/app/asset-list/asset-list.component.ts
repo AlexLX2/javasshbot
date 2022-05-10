@@ -9,14 +9,17 @@ import {AssetService} from "../_services/asset.service";
 })
 export class AssetListComponent implements OnInit {
 
-  assets: Asset[] | undefined;
+  private _assets: Asset[] | undefined;
 
   constructor(private assetService: AssetService) { }
 
   ngOnInit() {
     this.assetService.findAll().subscribe(data => {
-      this.assets =data;
+      this._assets =data;
     });
   }
 
+  get assets(): Asset[] | undefined {
+    return this._assets;
+  }
 }
