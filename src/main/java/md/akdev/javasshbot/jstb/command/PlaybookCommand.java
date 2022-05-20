@@ -12,7 +12,6 @@ import md.akdev.javasshbot.jstb.service.SendBotMessageService;
 import md.akdev.javasshbot.jstb.service.TelegramUserService;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 

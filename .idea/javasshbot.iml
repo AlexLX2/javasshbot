@@ -7,7 +7,7 @@
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="entityManagerFactory" value="b558f53a-98ce-44de-8e89-41f09e7ec134" />
-          <factory-entry name="javasshbot" />
+          <factory-entry name="javasshbot" value="7727d870-50d8-406a-ad6a-a56ce46fb227" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
