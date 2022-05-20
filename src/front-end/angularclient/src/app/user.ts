@@ -1,5 +1,4 @@
 export class User {
-  chatId: bigint;
-  userName: string;
-  active: boolean;
+  userName: string | undefined;
+  active: boolean | undefined;
 }
