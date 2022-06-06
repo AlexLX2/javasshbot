@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import {Asset} from "../asset";
-import {ActivatedRoute, Route, Router} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AssetService} from "../../_services/asset.service";
 
 @Component({
@@ -19,7 +19,7 @@ export class AssetFormComponent {
   }
 
   onSubmit(){
-    this.assetService.save(this.asset).subscribe(result => this.gotoAssetList())
+    this.assetService.save(this.asset).subscribe(() => this.gotoAssetList())
   }
 
   gotoAssetList(){
