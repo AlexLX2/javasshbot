@@ -4,14 +4,13 @@ import md.akdev.javasshbot.jstb.repo.AssetRepo;
 import md.akdev.javasshbot.jstb.repo.AssetTypeRepository;
 import md.akdev.javasshbot.jstb.repo.PlaybookRepository;
 import md.akdev.javasshbot.jstb.repo.TelegramUserRepo;
-import md.akdev.javasshbot.jstb.repo.entity.*;
-import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.security.core.userdetails.User;
+import md.akdev.javasshbot.jstb.repo.entity.Asset;
+import md.akdev.javasshbot.jstb.repo.entity.AssetType;
+import md.akdev.javasshbot.jstb.repo.entity.Playbook;
+import md.akdev.javasshbot.jstb.repo.entity.TelegramUser;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
-import java.security.Principal;
-import java.util.Base64;
 import java.util.List;
 
 @RestController
@@ -24,7 +23,7 @@ public class MainController {
     private final PlaybookRepository playbookRepository;
     private final AssetTypeRepository assetTypeRepository;
 
-
+    @Autowired
     public MainController(AssetRepo assetRepo, TelegramUserRepo telegramUserRepo, PlaybookRepository playbookRepository, AssetTypeRepository assetTypeRepository) {
         this.assetRepo = assetRepo;
         this.telegramUserRepo = telegramUserRepo;
@@ -33,7 +32,7 @@ public class MainController {
     }
 
     @GetMapping("/assets")
-    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+   // @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
     public List<Asset> getAssets(){
         return assetRepo.findAll();
     }

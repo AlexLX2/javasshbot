@@ -6,10 +6,10 @@ import com.jcraft.jsch.JSchException;
 import com.jcraft.jsch.Session;
 import md.akdev.javasshbot.jstb.repo.entity.Asset;
 import md.akdev.javasshbot.jstb.repo.entity.Playbook;
-import md.akdev.javasshbot.jstb.service.AssetService;
-import md.akdev.javasshbot.jstb.service.PlaybookService;
-import md.akdev.javasshbot.jstb.service.SendBotMessageService;
-import md.akdev.javasshbot.jstb.service.TelegramUserService;
+import md.akdev.javasshbot.jstb.bot.service.AssetService;
+import md.akdev.javasshbot.jstb.bot.service.PlaybookService;
+import md.akdev.javasshbot.jstb.bot.service.SendBotMessageService;
+import md.akdev.javasshbot.jstb.bot.service.TelegramUserService;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import java.io.IOException;

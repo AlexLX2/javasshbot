@@ -1,4 +1,4 @@
-package md.akdev.javasshbot.jstb.service;
+package md.akdev.javasshbot.jstb.bot.service;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import md.akdev.javasshbot.jstb.repo.entity.User;

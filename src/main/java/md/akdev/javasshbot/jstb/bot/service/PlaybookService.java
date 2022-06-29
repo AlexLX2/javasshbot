@@ -1,4 +1,4 @@
-package md.akdev.javasshbot.jstb.service;
+package md.akdev.javasshbot.jstb.bot.service;
 
 import md.akdev.javasshbot.jstb.repo.entity.Playbook;
 

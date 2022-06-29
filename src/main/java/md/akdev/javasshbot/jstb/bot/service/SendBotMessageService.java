@@ -1,4 +1,4 @@
-package md.akdev.javasshbot.jstb.service;
+package md.akdev.javasshbot.jstb.bot.service;
 
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.InlineKeyboardMarkup;
 

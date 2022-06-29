@@ -1,8 +1,8 @@
 package md.akdev.javasshbot.jstb.command;
 
 import md.akdev.javasshbot.jstb.repo.entity.TelegramUser;
-import md.akdev.javasshbot.jstb.service.SendBotMessageService;
-import md.akdev.javasshbot.jstb.service.TelegramUserService;
+import md.akdev.javasshbot.jstb.bot.service.SendBotMessageService;
+import md.akdev.javasshbot.jstb.bot.service.TelegramUserService;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 import static md.akdev.javasshbot.jstb.command.CommandUtils.getChatId;

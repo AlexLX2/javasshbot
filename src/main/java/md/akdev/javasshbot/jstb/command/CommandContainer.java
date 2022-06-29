@@ -1,10 +1,10 @@
 package md.akdev.javasshbot.jstb.command;
 
 import com.google.common.collect.ImmutableMap;
-import md.akdev.javasshbot.jstb.service.AssetService;
-import md.akdev.javasshbot.jstb.service.PlaybookService;
-import md.akdev.javasshbot.jstb.service.SendBotMessageService;
-import md.akdev.javasshbot.jstb.service.TelegramUserService;
+import md.akdev.javasshbot.jstb.bot.service.AssetService;
+import md.akdev.javasshbot.jstb.bot.service.PlaybookService;
+import md.akdev.javasshbot.jstb.bot.service.SendBotMessageService;
+import md.akdev.javasshbot.jstb.bot.service.TelegramUserService;
 
 import static md.akdev.javasshbot.jstb.command.CommandName.*;
 

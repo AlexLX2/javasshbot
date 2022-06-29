@@ -1,7 +1,7 @@
 package md.akdev.javasshbot.jstb.config;
 
 import io.jsonwebtoken.*;
-import md.akdev.javasshbot.jstb.service.UserDetailsImpl;
+import md.akdev.javasshbot.jstb.bot.service.UserDetailsImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

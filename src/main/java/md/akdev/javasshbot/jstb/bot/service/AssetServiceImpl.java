@@ -1,8 +1,7 @@
-package md.akdev.javasshbot.jstb.service;
+package md.akdev.javasshbot.jstb.bot.service;
 
 import md.akdev.javasshbot.jstb.repo.AssetRepo;
 import md.akdev.javasshbot.jstb.repo.entity.Asset;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

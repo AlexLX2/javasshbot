@@ -1,6 +1,6 @@
 package md.akdev.javasshbot.jstb.command;
 
-import md.akdev.javasshbot.jstb.service.SendBotMessageService;
+import md.akdev.javasshbot.jstb.bot.service.SendBotMessageService;
 import org.telegram.telegrambots.meta.api.objects.Update;
 
 public class UnknownCommand implements Command{
@@ -16,4 +16,5 @@ public class UnknownCommand implements Command{
     public void execute(Update update) {
         sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), UNKNOWN_MESSAGE);
     }
+
 }

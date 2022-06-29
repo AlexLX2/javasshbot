@@ -1,10 +1,10 @@
 package md.akdev.javasshbot.jstb.bot;
 
 import md.akdev.javasshbot.jstb.command.CommandContainer;
-import md.akdev.javasshbot.jstb.service.AssetService;
-import md.akdev.javasshbot.jstb.service.PlaybookService;
-import md.akdev.javasshbot.jstb.service.SendBotMessageServiceImpl;
-import md.akdev.javasshbot.jstb.service.TelegramUserService;
+import md.akdev.javasshbot.jstb.bot.service.AssetService;
+import md.akdev.javasshbot.jstb.bot.service.PlaybookService;
+import md.akdev.javasshbot.jstb.bot.service.SendBotMessageServiceImpl;
+import md.akdev.javasshbot.jstb.bot.service.TelegramUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
