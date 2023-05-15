@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Playbook} from "../playbook/playbook";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class PlaybookService {
   private playbookUrl: string;
 
   constructor(private http: HttpClient) {
-    this.playbookUrl="http://172.30.30.13:8080/api/playbooks";
+    this.playbookUrl=environment.base_url + "playbooks";
   }
 
   public findAll(): Observable<Playbook[]>{

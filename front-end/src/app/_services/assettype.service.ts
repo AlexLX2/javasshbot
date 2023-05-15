@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Assettype} from "../assettype/assettype";
+import {environment} from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ export class AssettypeService {
   private assettypeUrl: string;
 
   constructor(private http: HttpClient) {
-    this.assettypeUrl="http://172.30.30.13:8080/api/assettypes";
+    this.assettypeUrl=environment.base_url + "assettypes";
   }
 
   public findAll(): Observable<Assettype[]>{
