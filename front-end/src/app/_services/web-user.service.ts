@@ -11,7 +11,7 @@ const API_URL = environment.base_url;
 export class WebUserService {
   constructor(private http: HttpClient) { }
   getPublicContent(): Observable<any> {
-    return this.http.get(API_URL + 'all', { responseType: 'text' });
+    return this.http.get(API_URL + 'assets', { responseType: 'text' });
   }
   getUserBoard(): Observable<any> {
     return this.http.get(API_URL + 'user', { responseType: 'text' });

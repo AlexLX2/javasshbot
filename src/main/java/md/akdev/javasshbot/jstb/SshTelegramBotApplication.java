@@ -8,6 +8,7 @@ public class SshTelegramBotApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SshTelegramBotApplication.class, args);
+        
 	}
 
 }
