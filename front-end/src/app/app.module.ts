@@ -20,6 +20,7 @@ import { ProfileComponent } from './user/profile/profile.component';
 import { BoardAdminComponent } from './pages/board-admin/board-admin.component';
 import { BoardUserComponent } from './pages/board-user/board-user.component';
 import {authInterceptorProviders } from './_helpers/auth.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import {authInterceptorProviders } from './_helpers/auth.interceptor';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
